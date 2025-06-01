@@ -37,10 +37,11 @@
   }
 
   header {
-    background: #3d6e1f url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png') repeat-x;
+    /* темно-зеленый с прозрачностью */
+    background: rgba(25, 50, 10, 0.8) url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png') repeat-x;
     padding: 40px 20px;
     box-shadow: 0 4px 6px #000a;
-    border-bottom: 4px solid #7dbf5f;
+    border-bottom: 4px solid rgba(125, 191, 95, 0.8);
   }
   header h1 {
     margin: 0;
@@ -57,25 +58,26 @@
   }
   nav a {
     font-size: 14px;
-    background: #4d8f25;
+    background: rgba(25, 50, 10, 0.8);
     padding: 15px 25px;
-    border: 2px solid #7dbf5f;
+    border: 2px solid rgba(125, 191, 95, 0.8);
     border-radius: 6px;
-    box-shadow: inset 0 2px 0 #92d05a, 0 3px 4px #0008;
+    box-shadow: inset 0 2px 0 rgba(146, 208, 90, 0.8), 0 3px 4px #0008;
     transition: background 0.3s;
     user-select: none;
   }
   nav a:hover {
-    background: #7dbf5f;
+    background: rgba(125, 191, 95, 0.8);
   }
 
   section {
-    background: #3a6a1d;
-    border: 3px solid #7dbf5f;
+    /* темно-зеленый с прозрачностью */
+    background: rgba(25, 50, 10, 0.8);
+    border: 3px solid rgba(125, 191, 95, 0.8);
     margin: 70px 0;
     padding: 80px 40px 40px 40px;
     border-radius: 8px;
-    box-shadow: 0 0 15px #2a4d0f;
+    box-shadow: 0 0 15px rgba(42, 77, 15, 0.8);
     min-height: 450px;
     display: flex;
     flex-direction: column;
@@ -84,7 +86,7 @@
     position: relative;
     overflow: hidden;
 
-    /* Начинаем с прозрачности и смещения вниз */
+    /* Плавное появление */
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -172,10 +174,10 @@
     padding: 14px 36px;
     font-size: 16px;
     font-family: 'Press Start 2P', cursive;
-    background: #a64ca6;
+    background: rgba(166, 76, 166, 0.9);
     border-radius: 8px;
-    border: 3px solid #7a3d7a;
-    box-shadow: inset 0 3px 0 #b268b2, 0 4px 6px #000a;
+    border: 3px solid rgba(122, 61, 122, 0.8);
+    box-shadow: inset 0 3px 0 rgba(178, 104, 178, 0.8), 0 4px 6px #000a;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -185,7 +187,7 @@
     transition: background 0.3s;
   }
   .btn:hover {
-    background: #c07ed0;
+    background: rgba(192, 126, 208, 0.9);
   }
 
   footer {
@@ -193,7 +195,7 @@
     font-size: 12px;
     color: #aaa;
     padding: 20px 0;
-    border-top: 1px solid #4d8f25;
+    border-top: 1px solid rgba(125, 191, 95, 0.8);
     user-select: none;
   }
 
@@ -202,20 +204,19 @@
     width: 100px;
   }
 
-  /* Новая секция Как играть */
+  /* Секция Как играть */
   #how-to-play {
-    background:#2f5920;
-    border: 3px solid #7dbf5f;
+    background: rgba(25, 50, 10, 0.8);
+    border: 3px solid rgba(125, 191, 95, 0.8);
     margin: 70px 0;
     padding: 50px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 15px #2a4d0f;
+    box-shadow: 0 0 15px rgba(42, 77, 15, 0.8);
     color: #fff;
     font-family: 'Rubik', sans-serif;
     text-align: center;
     min-height: 400px;
 
-    /* Плавное появление */
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -277,68 +278,4 @@
       padding: 20px 10px;
     }
     section {
-      padding: 70px 20px 30px 20px;
-      min-height: 400px;
-    }
-    #about::before,
-    #features::before,
-    #join::before {
-      width: 95%;
-      height: 150px;
-      top: 5px;
-    }
-    #how-to-play > div {
-      flex-direction: column;
-      gap: 35px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>Early World's — Minecraft</h1>
-  <nav>
-    <a href="#about">О сервере</a>
-    <a href="#features">Фишки сервера</a>
-    <a href="#join">Как зайти</a>
-    <a href="#how-to-play">Как играть</a>
-  </nav>
-</header>
-
-<div class="container">
-
-  <section id="about" class="hidden">
-    <h2>О сервере</h2>
-    <p style="color:red;">
-      Early World's — это мир, где строительство и воображение объединяются, чтобы создать уникальный игровой опыт. Здесь игроки могут строить грандиозные сооружения, воплощать в жизнь самые смелые архитектурные проекты и делиться своими идеями с сообществом. Наш сервер предоставляет все необходимые инструменты для творчества и вдохновения.
-    </p>
-  </section>
-
-  <section id="features" class="hidden">
-    <h2>Фишки сервера</h2>
-    <ul>
-      <li>• Отсутствие доната</li>
-      <li>• Честный геймплей без Pay-to-Win</li>
-      <li>• Дружелюбное сообщество</li>
-      <li>• Регулярные обновления и события</li>
-    </ul>
-  </section>
-
-  <section id="join" class="hidden">
-    <h2>Как зайти</h2>
-    <p style="color:#a64ca6; font-weight: bold; font-family: 'Rubik', sans-serif;">IP сервера: Early-Worlds.aternos.me</p>
-    <p>Версия клиента: 1.21.x</p>
-    <button class="btn" id="copyBtn">Скопировать IP</button>
-  </section>
-
-  <section id="how-to-play" class="hidden">
-    <h2>Как играть</h2>
-    <div>
-      <div>
-        <img src="https://images.prom.ua/2345090956_w640_h640_vafelna-kartinka-krugla.jpg" alt="Зарегистрируйтесь" />
-        <h3>Зарегистрируйтесь</h3>
-        <p>Создайте аккаунт, чтобы начать приключение</p>
-      </div>
-      <div>
-        <img src="https://images.prom.ua/2345124719_w640_h640
+      padding: 70px 20px 30px 20
