@@ -5,277 +5,306 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Early World's — Minecraft</title>
 
-<!-- Шрифты -->
+<!-- Подключаем шрифты -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik&display=swap" rel="stylesheet" />
 
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
+  /* Базовые стили и фон на всю страницу */
+  body, html {
     margin: 0;
-    background: url('https://cdn.mcgolem.com/ad2584f29d40f6f7c998588ece91d7fa.png') repeat;
-    font-family: 'Press Start 2P', cursive;
-    color: #fff;
-    text-align: center;
+    padding: 0;
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* плавный скролл */
+    background: url('https://cdn.mcgolem.com/ad2584f29d40f6f7c998588ece91d7fa.png') no-repeat center center fixed;
+    background-size: cover;
   }
 
-  a {
-    color: #f0e68c;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  a:hover {
-    text-decoration: underline;
+  /* Полупрозрачный темный overlay для лучшей читаемости */
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
   }
 
+  /* Контейнер с контентом */
   .container {
     max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    margin: 50px auto 100px auto;
+    padding: 50px 40px 50px 40px;
+    background: rgba(10, 40, 10, 0.85); /* темно-зеленый с прозрачностью */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
   }
 
-  header {
-    /* темно-зеленый с прозрачностью */
-    background: rgba(25, 50, 10, 0.8) url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png') repeat-x;
-    padding: 40px 20px;
-    box-shadow: 0 4px 6px #000a;
-    border-bottom: 4px solid rgba(125, 191, 95, 0.8);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #ffd700;
-    text-shadow: 2px 2px #000;
-  }
-
-  nav {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-  }
-  nav a {
-    font-size: 14px;
-    background: rgba(25, 50, 10, 0.8);
-    padding: 15px 25px;
-    border: 2px solid rgba(125, 191, 95, 0.8);
-    border-radius: 6px;
-    box-shadow: inset 0 2px 0 rgba(146, 208, 90, 0.8), 0 3px 4px #0008;
-    transition: background 0.3s;
+  /* Заголовки */
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
     user-select: none;
   }
-  nav a:hover {
-    background: rgba(125, 191, 95, 0.8);
+
+  h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px #000;
   }
 
-  section {
-    /* темно-зеленый с прозрачностью */
-    background: rgba(25, 50, 10, 0.8);
-    border: 3px solid rgba(125, 191, 95, 0.8);
-    margin: 70px 0;
-    padding: 80px 40px 40px 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(42, 77, 15, 0.8);
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-
-    /* Плавное появление */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  section h2 {
-    margin-top: 0;
+  h2 {
     font-size: 28px;
-    text-shadow: 1px 1px #000;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
   }
+
+  /* Тексты */
+  p, ul {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style: disc inside;
+    padding-left: 0;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  /* Цвета для секций */
   #about h2 {
     color: #ff4c4c;
   }
-  #features h2 {
-    color: #ffd700;
-  }
+
   #join h2 {
     color: #a64ca6;
   }
-  #how-to-play h2 {
-    color: #fff;
-  }
 
-  section p, section ul {
-    font-size: 14px;
-    line-height: 1.7;
-    max-width: 720px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  #join p {
+  #features ul li::before {
+    content: "• ";
     color: #a64ca6;
+    font-weight: bold;
   }
 
-  section ul {
-    list-style: disc inside;
-    padding-left: 0;
-    text-align: left;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  section ul li {
-    margin: 10px 0;
-  }
-
-  /* Фоны над текстом в каждой секции */
-  #about::before,
-  #features::before,
-  #join::before {
-    content: "";
-    position: absolute;
+  /* Кнопки сверху */
+  nav {
+    position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;
-    height: 250px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  #about::before {
-    background-image: url('https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png');
-  }
-  #features::before {
-    background-image: url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png');
-  }
-  #join::before {
-    background-image: url('https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png');
-  }
-
-  /* Кнопка */
-  .btn {
-    display: inline-block;
-    padding: 14px 36px;
-    font-size: 16px;
-    font-family: 'Press Start 2P', cursive;
-    background: rgba(166, 76, 166, 0.9);
-    border-radius: 8px;
-    border: 3px solid rgba(122, 61, 122, 0.8);
-    box-shadow: inset 0 3px 0 rgba(178, 104, 178, 0.8), 0 4px 6px #000a;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 30px;
-    text-shadow: 1px 1px #6d2c6d;
-    user-select: none;
-    transition: background 0.3s;
-  }
-  .btn:hover {
-    background: rgba(192, 126, 208, 0.9);
-  }
-
-  footer {
-    text-align: center;
-    font-size: 12px;
-    color: #aaa;
-    padding: 20px 0;
-    border-top: 1px solid rgba(125, 191, 95, 0.8);
+    z-index: 100;
+    background: rgba(10, 40, 10, 0.8);
+    padding: 10px 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
     user-select: none;
   }
-
-  footer img {
-    margin-top: 10px;
-    width: 100px;
-  }
-
-  /* Секция Как играть */
-  #how-to-play {
-    background: rgba(25, 50, 10, 0.8);
-    border: 3px solid rgba(125, 191, 95, 0.8);
-    margin: 70px 0;
-    padding: 50px 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(42, 77, 15, 0.8);
-    color: #fff;
+  nav button {
     font-family: 'Rubik', sans-serif;
-    text-align: center;
-    min-height: 400px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #a64ca6;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav button:hover {
+    background-color: #a64ca6;
+    color: #fff;
+  }
 
+  /* Анимация плавного появления */
+  .fade-in {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition: opacity 1s ease-out, transform 1s ease-out;
   }
-  #how-to-play.visible {
+  .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  #how-to-play h2 {
-    margin-bottom: 50px;
-    font-size: 28px;
-    text-shadow: 1px 1px #000;
+  /* Секции с фоновыми картинками над текстом (увеличены до ширины контейнера) */
+  section {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    margin-bottom: 70px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  section .bg-image {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 960px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  }
+  section > * {
+    position: relative;
+    z-index: 1;
   }
 
-  #how-to-play > div {
+  #about .bg-image {
+    background-image: url('https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png');
+  }
+  #features .bg-image {
+    background-image: url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png');
+  }
+  #join .bg-image {
+    background-image: url('https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png');
+  }
+
+  /* Раздел "Как играть" */
+  #howto {
+    text-align: center;
+    padding: 40px 20px 80px 20px;
+    background: rgba(10, 40, 10, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    max-width: 960px;
+    margin: 0 auto 100px auto;
+  }
+  #howto h2 {
+    margin-bottom: 50px;
+  }
+  #howto .steps {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     flex-wrap: wrap;
   }
-
-  #how-to-play > div > div {
-    flex: 1;
-    min-width: 220px;
-    max-width: 280px;
-    text-align: center;
+  #howto .step {
+    width: 180px;
+    font-family: 'Rubik', sans-serif;
   }
-
-  #how-to-play img {
-    width: 150px;
-    height: 150px;
+  #howto .step img {
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    filter: drop-shadow(0 0 3px #000);
-    background: transparent;
-    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
   }
-
-  #how-to-play h3 {
+  #howto .step b {
+    display: block;
     font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
-
-  #how-to-play p {
+  #howto .step p {
     font-weight: 400;
-    font-size: 14px;
-    max-width: 240px;
-    margin: 0 auto;
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.4;
   }
 
-  @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-      gap: 15px;
-    }
-    .container {
-      padding: 20px 10px;
-    }
-    section {
-      padding: 70px 20px 30px 20
+</style>
+</head>
+<body>
+
+<nav>
+  <button data-target="about">О сервере</button>
+  <button data-target="features">Фишки сервера</button>
+  <button data-target="join">Как зайти</button>
+  <button data-target="howto">Как играть</button>
+</nav>
+
+<div class="container">
+
+  <section id="about" class="fade-in">
+    <div class="bg-image"></div>
+    <h2>О сервере</h2>
+    <p>Early World's — уникальный Minecraft-сервер, который приглашает тебя реализовать все свои идеи и творческие замыслы в строительстве. Здесь ты найдёшь простор для воображения, огромные просторы для творчества и дружелюбное сообщество. Построй свой мир, создавай удивительные конструкции и воплощай фантазии в реальность!</p>
+    <p>Наш сервер предлагает дружелюбную атмосферу для игроков всех возрастов. Будь готов к новым приключениям и интересным событиям, которые ждут тебя на каждом шагу!</p>
+  </section>
+
+  <section id="features" class="fade-in">
+    <div class="bg-image"></div>
+    <h2>Фишки сервера</h2>
+    <ul>
+      <li>Отсутствие доната — честная игра для всех.</li>
+      <li>Уникальные квесты и мини-игры, которые не дадут заскучать.</li>
+      <li>Регулярные события и обновления с новыми возможностями.</li>
+    </ul>
+  </section>
+
+  <section id="join" class="fade-in">
+    <div class="bg-image"></div>
+    <h2>Как зайти</h2>
+    <p><strong>IP сервера:</strong> Early-Worlds.aternos.me</p>
+    <p><strong>Версия клиента:</strong> 1.21.x</p>
+  </section>
+
+</div>
+
+<section id="howto" class="fade-in">
+  <h2>Как играть</h2>
+  <div class="steps">
+    <div class="step">
+      <img src="https://images.prom.ua/2345090956_w640_h640_vafelna-kartinka-krugla.jpg" alt="Зарегистрируйтесь" style="filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));" />
+      <b>Зарегистрируйтесь</b>
+      <p>Создайте аккаунт, чтобы начать приключение</p>
+    </div>
+    <div class="step">
+      <img src="https://images.prom.ua/2345124719_w640_h640_vafelna-kartinka-krugla.jpg" alt="Скачайте лаунчер" style="filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));" />
+      <b>Скачайте лаунчер</b>
+      <p>Загрузите клиент для своей операционной системы</p>
+    </div>
+    <div class="step">
+      <img src="https://images.prom.ua/2345121577_w640_h640_vafelna-kartinka-krugla.jpg" alt="Запустить лаунчер" style="filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));" />
+      <b>Запустить лаунчер</b>
+      <p>Выберите сервер и начните играть</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Плавный скролл при клике на кнопки навигации
+  document.querySelectorAll('nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-target');
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Анимация плавного появления при прокрутке
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+</body>
+</html>
