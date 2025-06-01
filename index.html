@@ -31,21 +31,22 @@
     }
 
     @keyframes glow {
-      0% { text-shadow: 0 0 5px #90ff90, 0 0 10px #90ff90; }
-      50% { text-shadow: 0 0 15px #90ff90, 0 0 30px #90ff90; }
-      100% { text-shadow: 0 0 5px #90ff90, 0 0 10px #90ff90; }
+      0% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
+      50% { text-shadow: 0 0 15px #fff9c4, 0 0 30px #fff9c4; }
+      100% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
       margin-bottom: 20px;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
       position: relative;
@@ -54,7 +55,7 @@
     }
 
     nav a:hover {
-      color: #90ff90;
+      color: #fff176;
       animation: glow 1.5s infinite ease-in-out;
     }
 
@@ -77,6 +78,9 @@
     h1 {
       font-size: 40px;
       margin: 20px 0;
+      background: linear-gradient(to right, #fff176, #fff9c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     h2 {
@@ -161,6 +165,8 @@
       <a href="#features">Фишки</a>
       <a href="#howto">Как зайти</a>
       <a href="#play">Как играть</a>
+      <a href="/SERVERR.rar" download>Ресурспаки</a>
+      <a href="https://disk.yandex.ru" target="_blank">Моды (вставить ссылку)</a>
     </nav>
   </header>
 
