@@ -1,110 +1,183 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сервер Йапи | Minecraft</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: url('https://i.imgur.com/QmM9fFQ.png') repeat;
-      color: #fff;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Сервер Йапи — Minecraft</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-    header {
-      background-color: #3e833e;
-      padding: 20px;
-      box-shadow: 0 4px 8px #000;
-    }
+  /* Общие стили */
+  body {
+    margin: 0;
+    background: #2c5a1f url('https://i.imgur.com/5EXAznz.png') repeat;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+  }
+  a {
+    color: #f0e68c;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      color: #ffeb3b;
-      text-shadow: 2px 2px #000;
-    }
+  /* Контейнер */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
+  /* Хедер */
+  header {
+    background: #3d6e1f url('https://i.imgur.com/2WFeWTX.png') repeat-x;
+    padding: 20px;
+    box-shadow: 0 4px 6px #000a;
+    text-align: center;
+    border-bottom: 4px solid #7dbf5f;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #ffd700;
+    text-shadow: 2px 2px #000;
+  }
+
+  /* Меню */
+  nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  nav a {
+    font-size: 12px;
+    background: #4d8f25;
+    padding: 10px 18px;
+    border: 2px solid #7dbf5f;
+    border-radius: 6px;
+    box-shadow: inset 0 2px 0 #92d05a, 0 3px 4px #0008;
+    transition: background 0.3s;
+  }
+  nav a:hover {
+    background: #7dbf5f;
+  }
+
+  /* Основные секции */
+  section {
+    background: #3a6a1d;
+    border: 3px solid #7dbf5f;
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #2a4d0f;
+  }
+
+  section h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #ffd700;
+    text-shadow: 1px 1px #000;
+    margin-bottom: 15px;
+  }
+  section p, section ul {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  section ul {
+    padding-left: 20px;
+  }
+
+  /* Кнопки */
+  .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 12px;
+    background: #7dbf5f;
+    border-radius: 6px;
+    border: 3px solid #4d8f25;
+    box-shadow: inset 0 3px 0 #92d05a, 0 3px 5px #0008;
+    color: #1d2a00;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    text-shadow: 1px 1px #d0e2a7;
+  }
+  .btn:hover {
+    background: #92d05a;
+  }
+
+  /* Футер */
+  footer {
+    text-align: center;
+    font-size: 10px;
+    color: #aaa;
+    padding: 15px 0;
+    border-top: 1px solid #4d8f25;
+    user-select: none;
+  }
+
+  /* Адаптив */
+  @media (max-width: 600px) {
     nav {
-      margin-top: 15px;
+      flex-direction: column;
+      gap: 10px;
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 12px;
+    .container {
+      padding: 10px;
     }
-
-    .hero {
-      padding: 60px 20px;
-      background: url('https://i.imgur.com/VwjKnUM.png') center/cover no-repeat;
-      color: #fff;
-    }
-
-    .hero h2 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 12px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #4caf50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px #000;
-    }
-
-    footer {
-      background-color: #222;
-      padding: 20px;
-      font-size: 10px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Сервер Йапи</h1>
-    <nav>
-      <a href="#about">О сервере</a>
-      <a href="#join">Как зайти</a>
-      <a href="#donate">Донат</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Добро пожаловать на Йапи!</h2>
-    <p>Уникальный Minecraft-сервер с крутым выживанием, ивентами и ламповой атмосферой.</p>
-    <a href="#join" class="btn">Присоединиться</a>
-  </section>
+<header>
+  <h1>Сервер Йапи — Minecraft</h1>
+  <nav>
+    <a href="#about">О сервере</a>
+    <a href="#features">Фишки</a>
+    <a href="#join">Как зайти</a>
+    <a href="#donate">Донат</a>
+  </nav>
+</header>
 
-  <section id="about" style="padding: 40px; background-color: #2e7d32;">
+<div class="container">
+
+  <section id="about">
     <h2>О сервере</h2>
-    <p>На Йапи вас ждёт:<br>• Выживание без приватов<br>• События каждую неделю<br>• Адекватная администрация<br>• Без Pay-to-Win</p>
+    <p>Добро пожаловать на уникальный Minecraft-сервер «Йапи»! Здесь вы окунётесь в атмосферу настоящего выживания с друзьями и новыми знакомыми.</p>
   </section>
 
-  <section id="join" style="padding: 40px; background-color: #388e3c;">
+  <section id="features">
+    <h2>Фишки сервера</h2>
+    <ul>
+      <li>Выживание без приватов — честная игра</li>
+      <li>Регулярные ивенты и конкурсы</li>
+      <li>Адекватная и дружелюбная администрация</li>
+      <li>Отсутствие Pay-to-Win</li>
+      <li>Классическая атмосфера Minecraft с ламповым комьюнити</li>
+    </ul>
+  </section>
+
+  <section id="join">
     <h2>Как зайти</h2>
-    <p>IP: <strong>yapi.minecraft.best</strong><br>Версия: <strong>1.20+</strong></p>
+    <p>IP: <strong>yapi.minecraft.best</strong></p>
+    <p>Версия клиента: <strong>1.20+</strong></p>
+    <button class="btn" onclick="alert('Скопировано! Используйте этот IP в Minecraft.')">Скопировать IP</button>
   </section>
 
-  <section id="donate" style="padding: 40px; background-color: #43a047;">
+  <section id="donate">
     <h2>Донат</h2>
-    <p>Поддержите сервер и получите плюшки!<br>Ранги, кейсы, флай и многое другое.</p>
-    <a href="#" class="btn">Перейти к донату</a>
+    <p>Поддержите сервер и получите эксклюзивные плюшки — ранги, кейсы, особые способности и многое другое!</p>
+    <button class="btn" onclick="window.location='#'">Перейти к донату</button>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Йапи. Все права защищены.</p>
-  </footer>
+</div>
+
+<footer>
+  &copy; 2025 Йапи. Все права защищены.
+</footer>
+
 </body>
 </html>
