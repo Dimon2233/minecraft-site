@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Early-World's — Minecraft</title>
+<title>Сервер Йапи — Minecraft</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-  /* Общие стили */
   body {
     margin: 0;
-    background: #2c5a1f url('https://cdn.mcgolem.com/535a1b16d0efda658574deb6a4a00764.png') repeat;
+    background: #2c5a1f url('https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png') repeat;
     font-family: 'Press Start 2P', cursive;
     color: #fff;
   }
@@ -22,16 +21,14 @@
     text-decoration: underline;
   }
 
-  /* Контейнер */
   .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
   }
 
-  /* Хедер */
   header {
-    background: #3d6e1f url('https://i.imgur.com/2WFeWTX.png') repeat-x;
+    background: #3d6e1f url('https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png') repeat-x;
     padding: 20px;
     box-shadow: 0 4px 6px #000a;
     text-align: center;
@@ -44,7 +41,6 @@
     text-shadow: 2px 2px #000;
   }
 
-  /* Меню */
   nav {
     margin-top: 15px;
     display: flex;
@@ -64,7 +60,6 @@
     background: #7dbf5f;
   }
 
-  /* Основные секции */
   section {
     background: #3a6a1d;
     border: 3px solid #7dbf5f;
@@ -80,6 +75,7 @@
     color: #ffd700;
     text-shadow: 1px 1px #000;
     margin-bottom: 15px;
+    text-align: center;
   }
   section p, section ul {
     font-size: 10px;
@@ -89,7 +85,6 @@
     padding-left: 20px;
   }
 
-  /* Кнопки */
   .btn {
     display: inline-block;
     padding: 10px 25px;
@@ -108,7 +103,6 @@
     background: #92d05a;
   }
 
-  /* Футер */
   footer {
     text-align: center;
     font-size: 10px;
@@ -118,7 +112,12 @@
     user-select: none;
   }
 
-  /* Адаптив */
+  /* Дополнительно: вставим твою третью картинку в футер */
+  footer img {
+    margin-top: 10px;
+    width: 100px;
+  }
+
   @media (max-width: 600px) {
     nav {
       flex-direction: column;
@@ -133,38 +132,38 @@
 <body>
 
 <header>
-  <h1>Early=World's</h1>
+  <h1>Сервер Йапи — Minecraft</h1>
   <nav>
     <a href="#about">О сервере</a>
     <a href="#features">Фишки</a>
     <a href="#join">Как зайти</a>
-    <a href="#donate">О проекте</a>
+    <a href="#donate">Донат</a>
   </nav>
 </header>
 
 <div class="container">
 
   <section id="about">
-    <h2 style="text-align: center;">О сервере</h2>
-    <p>Добро пожаловать на уникальный Minecraft-сервер «Early Wordl's»! Здесь вы окунётесь в атмосферу настоящего выживания с друзьями и новыми знакомыми. На данном сервере вы делаете что пожелаете. Строить дома, путишествовать, наслаждатся игрой!</p>
+    <h2>О сервере</h2>
+    <p>Добро пожаловать на уникальный Minecraft-сервер «Йапи»! Здесь вы окунётесь в атмосферу настоящего выживания с друзьями и новыми знакомыми.</p>
   </section>
 
   <section id="features">
-    <h2><center></center>Фишки сервера</h2>
+    <h2>Фишки сервера</h2>
     <ul>
       <li>Выживание без приватов — честная игра</li>
-      <li>Регулярные конкурсы и ивенты</li>
+      <li>Регулярные ивенты и конкурсы</li>
       <li>Адекватная и дружелюбная администрация</li>
-      <li>Отсутствие доната</li>
+      <li>Отсутствие Pay-to-Win</li>
       <li>Классическая атмосфера Minecraft с ламповым комьюнити</li>
     </ul>
   </section>
 
   <section id="join">
-   <center> </center> <h2>Как зайти на сервер?</h2>
-    <p>IP: <strong>Early-Worlds.aternos.me</strong></p>
-    <p>Версия клиента: <strong>1.21.+</strong></p>
-    <button class="btn" onclick="alert('Скопировано! Используйте этот IP в Minecraft.')">Нажми чтобы скопировать!</button></center>
+    <h2>Как зайти</h2>
+    <p>IP: <strong>yapi.minecraft.best</strong></p>
+    <p>Версия клиента: <strong>1.20+</strong></p>
+    <button class="btn" onclick="navigator.clipboard.writeText('yapi.minecraft.best'); alert('IP скопирован!')">Скопировать IP</button>
   </section>
 
   <section id="donate">
@@ -176,7 +175,8 @@
 </div>
 
 <footer>
-  &copy; 2025 Йапи. Все права защищены.
+  &copy; 2025 Йапи. Все права защищены.<br/>
+  <img src="https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png" alt="Логотип сервера" />
 </footer>
 
 </body>
