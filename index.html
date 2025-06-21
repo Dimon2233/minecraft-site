@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Как играть - Early World's</title>
+  <title>Early World's</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <style>
     html {
@@ -18,20 +18,23 @@
     body {
       margin: 0;
       font-family: 'Minecraft', 'Rubik', sans-serif;
-      background: url('https://vsthemes.org/uploads/posts/2024-09/minecraft-glowing-caves.webp') no-repeat center center fixed;
+      background: url('https://cdn.mcgolem.com/ad2584f29d40f6f7c998588ece91d7fa.png') no-repeat center center fixed;
       background-size: cover;
       color: white;
+      text-align: center;
     }
 
     header {
       background-color: rgba(0, 64, 0, 0.7);
       padding: 20px;
-      text-align: center;
     }
 
     h1 {
       font-size: 40px;
-      margin: 0;
+      margin: 20px 0;
+      background: linear-gradient(to right, #fff176, #fff9c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     h2 {
@@ -40,23 +43,33 @@
       margin-bottom: 20px;
     }
 
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
+      50% { text-shadow: 0 0 15px #fff9c4, 0 0 30px #fff9c4; }
+      100% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
+    }
+
     nav {
       display: flex;
       justify-content: center;
+      gap: 20px;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     nav a {
-      margin: 0 15px;
       color: white;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+      transition: all 0.3s ease;
       font-family: 'Minecraft';
     }
 
     nav a:hover {
       color: #fff176;
+      animation: glow 1.5s infinite ease-in-out;
     }
 
     section {
@@ -66,6 +79,81 @@
       padding: 30px;
       border-radius: 15px;
       text-align: center;
+    }
+
+    section img.section-bg {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .red-text {
+      color: red;
+    }
+
+    .purple-text {
+      color: violet;
+    }
+
+    .features-list {
+      list-style: disc;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .play-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .play-step {
+      width: 300px;
+      margin: 20px;
+    }
+
+    .play-step img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: contain;
+      background-color: transparent;
+    }
+
+    .play-step strong {
+      display: block;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .copy-box {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Rubik';
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .copy-box:hover {
+      background: #555;
+    }
+
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: rgba(0, 64, 0, 0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Minecraft';
     }
 
     .edition-link {
@@ -95,6 +183,7 @@
       padding: 10px;
       margin-top: 5px;
       border-radius: 8px;
+      text-align: left;
     }
 
     .note-small {
@@ -104,48 +193,3 @@
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Как играть 🎮</h1>
-    <nav>
-      <a href="index.html">← Назад на главную</a>
-    </nav>
-  </header>
-
-  <section>
-    <span class="edition-link" onclick="document.getElementById('java-edition').scrollIntoView({behavior: 'smooth'})">1. Java Edition</span>
-    <span class="edition-link" onclick="document.getElementById('bedrock-edition').scrollIntoView({behavior: 'smooth'})">2. Bedrock Edition</span>
-    <span class="edition-link" onclick="document.getElementById('foldcraft-edition').scrollIntoView({behavior: 'smooth'})">3. Fold Craft <span class="note-small">(Java Minecraft для Android)</span></span>
-  </section>
-
-  <section id="java-edition">
-    <h2>Java Edition</h2>
-    <div class="step">1. Установить лаунчер → <a href="https://dl2.tlauncher.org/f.php?f=files%2FTLauncher-Installer-1.8.4.exe" download>Нажми меня</a></div>
-    <div class="step">2. Установить моды → <a href="https://disk.yandex.ru/d/Fx_B7fdmnjUlHg" download>Наведись и скачай</a></div>
-    <div class="step">3. Установить моды в папку с Minecraft <a onclick="toggleHint('mod-help')">Как это сделать?</a>
-      <div class="hint" id="mod-help">Открой лаунчер → Папка с игрой → Закинь архив в папку mods. Всё просто!</div>
-    </div>
-    <div class="step">4. Установить текстурпаки <a onclick="toggleHint('tex-help')">Как это сделать?</a>
-      <div class="hint" id="tex-help">В лаунчере зайди в папку resourcepacks и закинь туда скачанные текстурпаки.</div>
-    </div>
-    <div class="step">5. Запустить игру <span title="Выбрать версию 1.21.4 (желательно) ввести свой Ник и нажать играть!">(наведись для подсказки)</span></div>
-  </section>
-
-  <section id="bedrock-edition">
-    <h2>Bedrock Edition</h2>
-    <p>Добавим позже! 😉</p>
-  </section>
-
-  <section id="foldcraft-edition">
-    <h2>Fold Craft</h2>
-    <p>Fold Craft — это Java Minecraft на Android. Установите PoJavLauncher из Google Play и следуйте тем же шагам, что и для Java Edition.</p>
-  </section>
-
-  <script>
-    function toggleHint(id) {
-      const el = document.getElementById(id);
-      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
-</body>
-</html>
