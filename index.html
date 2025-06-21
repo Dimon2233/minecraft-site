@@ -1,222 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Early World's</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    @font-face {
-      font-family: 'Minecraft';
-      src: url('minecraft.ttf') format('truetype');
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Minecraft', 'Rubik', sans-serif;
-      background: url('https://cdn.mcgolem.com/ad2584f29d40f6f7c998588ece91d7fa.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      background-color: rgba(0, 64, 0, 0.7);
-      padding: 20px;
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
-      50% { text-shadow: 0 0 15px #fff9c4, 0 0 30px #fff9c4; }
-      100% { text-shadow: 0 0 5px #fff176, 0 0 10px #fff176; }
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-      transition: all 0.3s ease;
-      font-family: 'Minecraft';
-    }
-
-    nav a:hover {
-      color: #fff176;
-      animation: glow 1.5s infinite ease-in-out;
-    }
-
-    section {
-      padding: 50px 20px;
-      background-color: rgba(0, 64, 0, 0.5);
-      margin: 40px auto;
-      max-width: 1000px;
-      border-radius: 20px;
-    }
-
-    section img.section-bg {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 40px;
-      margin: 20px 0;
-      background: linear-gradient(to right, #fff176, #fff9c4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    h2 {
-      font-size: 32px;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .red-text {
-      color: red;
-    }
-
-    .purple-text {
-      color: violet;
-    }
-
-    .features-list {
-      list-style: disc;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .play-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .play-step {
-      width: 300px;
-      margin: 20px;
-    }
-
-    .play-step img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: contain;
-      background-color: transparent;
-    }
-
-    .play-step strong {
-      display: block;
-      font-size: 20px;
-      margin-top: 15px;
-    }
-
-    .copy-box {
-      display: inline-block;
-      background: #333;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-family: 'Rubik';
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .copy-box:hover {
-      background: #555;
-    }
-
-    #back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: rgba(0, 64, 0, 0.7);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-family: 'Minecraft';
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Early World's</h1>
-    <nav>
-      <a href="#about">О сервере ❗</a>
-      <a href="#features">Фишки 💡</a>
-      <a href="#howto">Как зайти ❓</a>
-      <a href="#play">Как играть 🎮</a>
-    
-    </nav>
-  </header>
-
-  <section id="about">
-    <img class="section-bg" src="https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png" alt="bg">
-    <h2 class="red-text">О сервере ❗</h2>
-    <p>Добро пожаловать в мир творчества и приключений! На нашем сервере вы сможете строить уникальные постройки, исследовать обширные территории и воплощать самые смелые фантазии. Мы ценим воображение и свободу игрока — строить, выживать, объединяться в команды и просто отдыхать в Minecraft. ❗ВАЖНО❗ установить моды и ресурспаки для стабильной игры!!</p>
-  </section>
-
-  <section id="features">
-    <img class="section-bg" src="https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png" alt="bg">
-    <h2>Фишки сервера 💡</h2>
-    <ul class="features-list">
-      <li>✔ Отсутствие доната💸</li>
-      <li>✔ Уникальные биомы🌳</li>
-      <li>✔ Дружелюбное комьюнити😂</li>
-      <li>✔ Крутые ивенты🎉</li>
-    </ul>
-  </section>
-
-  <section id="howto">
-    <img class="section-bg" src="https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png" alt="bg">
-    <h2 class="purple-text">Как зайти ❓</h2>
-    <p>Версия клиента: <strong>1.12.2-1.21.4</strong></p>
-    <p>Айпи сервера: <strong>Early-Worlds.aternos.me</strong></p>
-    <div class="copy-box" onclick="navigator.clipboard.writeText('Early-Worlds.aternos.me')">
-      Скопировать IP
-    </div>
-  </section>
-
-  <section id="play">
-    <h2>Как играть 🎮</h2>
-    <div class="play-section">
-      <div class="play-step">
-        <img src="1.png" alt="Step 1">
-        <strong>Зарегистрируйтесь</strong>
-        <p>Создайте аккаунт, чтобы начать приключение</p>
-      </div>
-      <div class="play-step">
-        <img src="2.png" alt="Step 2">
-        <strong>Скачайте лаунчер</strong>
-        <p>Загрузите клиент для своей операционной системы</p>
-      </div>
-      <div class="play-step">
-        <img src="3.png" alt="Step 3">
-        <strong>Запустите лаунчер</strong>
-        <p>Выберите сервер и начните играть</p>
-      </div>
-    </div>
-  </section>
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Early World's</title>
@@ -297,81 +81,6 @@
       text-align: center;
     }
 
-    section img.section-bg {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
-    .red-text {
-      color: red;
-    }
-
-    .purple-text {
-      color: violet;
-    }
-
-    .features-list {
-      list-style: disc;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .play-section {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .play-step {
-      width: 300px;
-      margin: 20px;
-    }
-
-    .play-step img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: contain;
-      background-color: transparent;
-    }
-
-    .play-step strong {
-      display: block;
-      font-size: 20px;
-      margin-top: 15px;
-    }
-
-    .copy-box {
-      display: inline-block;
-      background: #333;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-family: 'Rubik';
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .copy-box:hover {
-      background: #555;
-    }
-
-    #back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: rgba(0, 64, 0, 0.7);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-family: 'Minecraft';
-    }
-
     .edition-link {
       font-size: 24px;
       display: block;
@@ -409,3 +118,97 @@
     }
   </style>
 </head>
+<body>
+  <header>
+    <h1>Early World's</h1>
+    <nav>
+      <a href="#about">О сервере ❗</a>
+      <a href="#features">Фишки 💡</a>
+      <a href="#howto">Как зайти ❓</a>
+      <a href="#play">Как играть 🎮</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <img class="section-bg" src="https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png" alt="bg">
+    <h2 class="red-text">О сервере ❗</h2>
+    <p>Добро пожаловать в мир творчества и приключений! На нашем сервере вы сможете строить уникальные постройки, исследовать обширные территории и воплощать самые смелые фантазии. Мы ценим воображение и свободу игрока — строить, выживать, объединяться в команды и просто отдыхать в Minecraft. ❗ВАЖНО❗ установить моды и ресурспаки для стабильной игры!!</p>
+  </section>
+
+  <section id="features">
+    <img class="section-bg" src="https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png" alt="bg">
+    <h2>Фишки сервера 💡</h2>
+    <ul class="features-list">
+      <li>✔ Отсутствие доната💸</li>
+      <li>✔ Уникальные биомы🌳</li>
+      <li>✔ Дружелюбное комьюнити😂</li>
+      <li>✔ Крутые ивенты🎉</li>
+    </ul>
+  </section>
+
+  <section id="howto">
+    <img class="section-bg" src="https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png" alt="bg">
+    <h2 class="purple-text">Как зайти ❓</h2>
+    <p>Версия клиента: <strong>1.12.2-1.21.4</strong></p>
+    <p>Айпи сервера: <strong>Early-Worlds.aternos.me</strong></p>
+    <div class="copy-box" onclick="navigator.clipboard.writeText('Early-Worlds.aternos.me')">
+      Скопировать IP
+    </div>
+  </section>
+
+  <section id="play">
+    <h2>Как играть 🎮</h2>
+    <div class="step edition-link" onclick="document.getElementById('java-edition').scrollIntoView({behavior: 'smooth'})">1. Java Edition</div>
+    <div class="step edition-link" onclick="document.getElementById('bedrock-edition').scrollIntoView({behavior: 'smooth'})">2. Bedrock Edition</div>
+    <div class="step edition-link" onclick="document.getElementById('foldcraft-edition').scrollIntoView({behavior: 'smooth'})">3. Fold Craft <span class="note-small">(Java Minecraft для Android)</span></div>
+  </section>
+
+  <section id="java-edition">
+    <h2>Java Edition</h2>
+    <div class="step">1. Установить лаунчер → <a href="https://dl2.tlauncher.org/f.php?f=files%2FTLauncher-Installer-1.8.4.exe" download>Нажми меня</a></div>
+    <div class="step">2. Установить моды → <a href="https://disk.yandex.ru/d/Fx_B7fdmnjUlHg" download>Наведись и скачай</a></div>
+    <div class="step">3. Установить моды в папку с Minecraft <a onclick="toggleHint('mod-help')">Как это сделать?</a>
+      <div class="hint" id="mod-help">
+        <strong>Подробная инструкция по установке модов:</strong><br><br>
+        1. Открой лаунчер TLauncher и нажми на иконку папки рядом с кнопкой "Играть".<br>
+        2. Перейди в папку <code>.minecraft</code> → найди папку <code>mods</code>.<br>
+        3. Если папки <code>mods</code> нет — создай её вручную.<br>
+        4. Перетащи скачанные моды (в формате .jar) в папку <code>mods</code>.<br>
+        5. Вернись в лаунчер, выбери версию с модами (например, Forge), нажми "Играть".<br>
+        6. В игре перейди в раздел "Моды", чтобы убедиться, что они установлены.<br>
+      </div>
+    </div>
+    <div class="step">4. Установить текстурпаки <a onclick="toggleHint('tex-help')">Как это сделать?</a>
+      <div class="hint" id="tex-help">
+        <strong>Подробная инструкция по установке текстурпаков:</strong><br><br>
+        1. В лаунчере нажми на папку рядом с "Играть" и открой <code>.minecraft</code>.<br>
+        2. Открой папку <code>resourcepacks</code> (если её нет — создай вручную).<br>
+        3. Скопируй скачанные текстурпаки (обычно .zip) в эту папку.<br>
+        4. Запусти игру и перейди в "Настройки" → "Ресурспаки".<br>
+        5. Найди установленные паки в левом списке и перемести их вправо, чтобы активировать.<br>
+        6. Нажми "Готово", текстуры обновятся автоматически.<br>
+      </div>
+    </div>
+    <div class="step">5. Запустить игру <span title="Выбрать версию 1.21.4 (желательно) ввести свой Ник и нажать играть!">(наведись для подсказки)</span></div>
+  </section>
+
+  <section id="bedrock-edition">
+    <h2>Bedrock Edition</h2>
+    <p>Добавим позже! 😉</p>
+  </section>
+
+  <section id="foldcraft-edition">
+    <h2>Fold Craft</h2>
+    <p>Fold Craft — это Java Minecraft на Android. Установите PoJavLauncher из Google Play и следуйте тем же шагам, что и для Java Edition.</p>
+  </section>
+
+  <a href="#top" id="back-to-top">↑ Наверх</a>
+
+  <script>
+    function toggleHint(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
