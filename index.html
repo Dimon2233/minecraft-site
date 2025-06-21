@@ -41,6 +41,7 @@
       font-size: 32px;
       color: white;
       margin-bottom: 20px;
+      font-family: 'Minecraft';
     }
 
     @keyframes glow {
@@ -83,9 +84,9 @@
 
     .section-bg {
       width: 100%;
-      max-width: 700px;
+      max-width: 500px;
       height: auto;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 15px;
       margin-bottom: 20px;
     }
@@ -102,7 +103,7 @@
 
     .step {
       margin: 15px 0;
-      font-family: 'Rubik';
+      font-family: 'Minecraft';
     }
 
     .step a {
@@ -123,7 +124,22 @@
     .note-small {
       font-size: 12px;
       color: #ccc;
+      font-family: 'Minecraft';
+    }
+
+    .copy-box {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
       font-family: 'Rubik';
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .copy-box:hover {
+      background: #555;
     }
   </style>
 </head>
@@ -139,39 +155,14 @@
   </header>
 
   <section id="about">
+    <img class="section-bg" src="https://vsthemes.org/uploads/posts/2024-09/minecraft-glowing-caves.webp" alt="glowing cave bg">
     <img class="section-bg" src="https://cdn.mcgolem.com/cbe65232c129de7dec00d57c12e3153e.png" alt="bg">
     <h2 class="red-text">О сервере ❗</h2>
     <p>Добро пожаловать в мир творчества и приключений! На нашем сервере вы сможете строить уникальные постройки, исследовать обширные территории и воплощать самые смелые фантазии. Мы ценим воображение и свободу игрока — строить, выживать, объединяться в команды и просто отдыхать в Minecraft. ❗ВАЖНО❗ установить моды и ресурспаки для стабильной игры!!</p>
   </section>
 
-  <section id="features">
-    <img class="section-bg" src="https://cdn.mcgolem.com/db0f5c4ccfb066efec5d11ba0ca496c1.png" alt="bg">
-    <h2>Фишки сервера 💡</h2>
-    <ul class="features-list">
-      <li>✔ Отсутствие доната💸</li>
-      <li>✔ Уникальные биомы🌳</li>
-      <li>✔ Дружелюбное комьюнити😂</li>
-      <li>✔ Крутые ивенты🎉</li>
-    </ul>
-  </section>
-
-  <section id="howto">
-    <img class="section-bg" src="https://cdn.mcgolem.com/8311068fc4cae8721ce7d6a430113a61.png" alt="bg">
-    <h2 class="purple-text">Как зайти ❓</h2>
-    <p>Версия клиента: <strong>1.12.2-1.21.4</strong></p>
-    <p>Айпи сервера: <strong>Early-Worlds.aternos.me</strong></p>
-    <div class="copy-box" onclick="navigator.clipboard.writeText('Early-Worlds.aternos.me')">
-      Скопировать IP
-    </div>
-  </section>
- <section id="play">
-    <h2>Как играть 🎮</h2>
-    <div class="step edition-link" onclick="document.getElementById('java-edition').scrollIntoView({behavior: 'smooth'})">1. Java Edition</div>
-    <div class="step edition-link" onclick="document.getElementById('bedrock-edition').scrollIntoView({behavior: 'smooth'})">2. Bedrock Edition</div>
-    <div class="step edition-link" onclick="document.getElementById('foldcraft-edition').scrollIntoView({behavior: 'smooth'})">3. Fold Craft <span class="note-small">(Java Minecraft для Android)</span></div>
-  </section>
-
   <section id="java-edition">
+    <img class="section-bg" src="https://raw.githubusercontent.com/yourname/repo/main/2.png" alt="Java Edition image">
     <h2>Java Edition</h2>
     <div class="step">1. Установить лаунчер → <a href="https://dl2.tlauncher.org/f.php?f=files%2FTLauncher-Installer-1.8.4.exe" download>Нажми меня</a></div>
     <div class="step">2. Установить моды → <a href="https://disk.yandex.ru/d/Fx_B7fdmnjUlHg" download>Наведись и скачай</a></div>
@@ -201,16 +192,19 @@
   </section>
 
   <section id="bedrock-edition">
+    <img class="section-bg" src="https://raw.githubusercontent.com/yourname/repo/main/1.png" alt="Bedrock image">
     <h2>Bedrock Edition</h2>
-    <p>Добавим позже! 😉</p>
+    <div class="step">1. Установи Архив (ссылка - )</div>
+    <div class="step">2. Распакуй любую папку</div>
+    <div class="step">3. Открывай каждый файл по отдельности</div>
+    <div class="step">4. Зайди в настройки и включи все текстурпаки</div>
   </section>
 
   <section id="foldcraft-edition">
+    <img class="section-bg" src="https://raw.githubusercontent.com/yourname/repo/main/3.png" alt="FoldCraft image">
     <h2>Fold Craft</h2>
     <p>Fold Craft — это Java Minecraft на Android. Установите PoJavLauncher из Google Play и следуйте тем же шагам, что и для Java Edition.</p>
   </section>
-
-  <a href="#top" id="back-to-top">↑ Наверх</a>
 
   <script>
     function toggleHint(id) {
@@ -220,4 +214,3 @@
   </script>
 </body>
 </html>
-
